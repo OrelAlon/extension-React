@@ -7,7 +7,7 @@ In addition, the extension should count the amount of the _different_ sites the 
 The task is to build an extension for chrome through the Arpeely API that shows certain information about the site the user is on.
 In addition, the extension should count the amount of the _different_ sites the user visited and have the ability to reset it.
 
-The information is mainly taken from [https://developer.chrome.com/docs/extensions/mv3/getstarted/](chrome developer website).
+The information is mainly taken from [chrome developer website](https://developer.chrome.com/docs/extensions/mv3/getstarted/).
 
 ### `manifest.json`
 
@@ -26,4 +26,4 @@ some
 
 ## design
 
-My design was taken from your site and [https://orel-alon-portfolio.netlify.app/](My Portfolio) which happen to be very similar in color
+My design was taken from your site and [My Portfolio](https://orel-alon-portfolio.netlify.app/) which happen to be very similar in color
