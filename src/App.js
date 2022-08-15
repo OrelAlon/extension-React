@@ -15,7 +15,7 @@ function App() {
 
   //
   useEffect(() => {
-    const tryFetch = async () => {
+    const fetchData = async () => {
       const domain = await getCurrentTab();
       const apiData = await getApiArpeely(domain);
 
@@ -27,7 +27,7 @@ function App() {
       });
       saveDomain(domain);
     };
-    tryFetch();
+    fetchData();
   }, []);
 
   //
