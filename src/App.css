@@ -1,38 +1,113 @@
-.App {
+.app {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  background-color: #1b1c1e;
+}
+
+.web-btn {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  margin: 14px 5px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.web-btn:hover {
+  background-color: white;
+  color: black;
+}
+.reset-btn {
+  background-color: black;
+  color: white;
+  border: white;
+  padding: 10px 20px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+.show {
   text-align: center;
+  margin: 10px;
+}
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  width: 400px;
+  background-color: #1b1c1e;
+  color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 0 20px 8px #d0d0d0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  text-align: justify;
+  padding: 40px;
+  width: 80%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flap {
+  width: 100%;
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flap::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  background: #fff;
+  background-position: 100px;
+  background-repeat: no-repeat;
+  transition: 1s;
+}
+
+.flap::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  right: 0;
+  background: white;
+  background-position: -200px;
+  background-repeat: no-repeat;
+  transition: 1s;
+}
+
+.container:hover .flap::after {
+  transform: translatex(300px);
+}
+
+.container:hover .flap::before {
+  transform: translatex(-300px);
+}
+h6 {
+  font-weight: bolder;
+}
+h4 {
+  letter-spacing: 2px;
+}
+p {
+  font-size: 10px;
+}
+.info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.icons {
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: #fd6262;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btns {
+  position: absolute;
 }

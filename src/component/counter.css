@@ -1,0 +1,22 @@
+a {
+  width: 32px;
+  margin: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  /* border: solid 2px #ffffff; */
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #1b1c1e;
+  transition: all 0.1s;
+}
+
+a:hover {
+  /* border: solid 2px #fff; */
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px #fff;
+}
+.counter-div {
+  color: #889ce7;
+}
