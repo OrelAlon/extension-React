@@ -8,29 +8,36 @@
   background-color: black;
   color: white;
   font-size: 20px;
-  margin: 14px 5px;
   padding: 5px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 2;
 }
 .web-btn:hover {
   background-color: white;
   color: black;
+  cursor: pointer;
 }
-.reset-btn {
-  background-color: black;
-  color: white;
-  border: white;
-  padding: 10px 20px;
+.reset-btn:hover {
+  color: #fd6262;
+  cursor: pointer;
 }
 
-.btn:hover {
+.reset-btn {
+  background-color: black;
+  color: #889ce7;
+  padding: 8px 18px;
+}
+
+.btn {
   cursor: pointer;
 }
 .show {
   text-align: center;
   margin: 10px;
+  top: 0;
 }
 .container {
   position: absolute;
@@ -42,7 +49,7 @@
   background-color: #1b1c1e;
   color: #ffffff;
   overflow: hidden;
-  box-shadow: 0 0 20px 8px #d0d0d0;
+  /* box-shadow: 0 0 20px 8px #d0d0d0; */
 }
 
 .content {
@@ -104,10 +111,12 @@ p {
 }
 .icons {
   vertical-align: middle;
-  margin-right: 5px;
   margin-bottom: 5px;
+  margin-right: 8px;
   color: #fd6262;
 }
-.btns {
-  position: absolute;
+.count-div {
+  position: fixed;
+  margin-right: 20px;
+  right: 0;
 }

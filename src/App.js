@@ -100,36 +100,37 @@ function App() {
 
   return (
     <div className='container'>
+      <button className='web-btn' onClick={() => openTab()}>
+        A
+      </button>
+
       <h4 className='show'>Arpeely Chrome Extension</h4>
+
       <div className='content'>
         <div className='column'>
           <div className='info'>
-            <div>
-              <div className='icons'>
-                <RiComputerLine className='icons' /> {activeTab.ip}
-              </div>
-              <div className='icons'>
-                <GoLocation className='icons' /> {activeTab.location}
-              </div>
-              <div className='icons'>
-                <VscOrganization className='icons' />
-                {activeTab.organization}
-              </div>
-              <div className='icons'>
-                <BsFillFlagFill className='icons' /> {activeTab.country_code}
-              </div>
+            <div className='icons'>
+              <RiComputerLine className='icons' /> {activeTab.ip}
+            </div>
+            <div className='icons'>
+              <GoLocation className='icons' /> {activeTab.location}
+            </div>
+            <div className='icons'>
+              <VscOrganization className='icons' />
+              {activeTab.organization}
+            </div>
+            <div className='icons'>
+              <BsFillFlagFill className='icons' />
+              {activeTab.country_code}
             </div>
           </div>
 
-          <div className='btns'>
+          <div className='count-div'>
             {!loading && <Counter counter={counter} />}
             <button className='btn reset-btn' onClick={resetCounter}>
               Reset
             </button>
           </div>
-          <button className='btn web-btn' onClick={() => openTab()}>
-            A
-          </button>
         </div>
       </div>
 
