@@ -1,6 +1,9 @@
 /*global chrome*/
 import { useEffect, useState } from "react";
+
 import Counter from "./component/Counter";
+import Spinnner from "./component/spinner/Spinner";
+// icons
 import { RiComputerLine } from "react-icons/ri";
 import { GoLocation } from "react-icons/go";
 import { VscOrganization } from "react-icons/vsc";
@@ -11,7 +14,8 @@ import "./App.css";
 function App() {
   const [activeTab, setActiveTab] = useState({});
   const [counter, setCounter] = useState(0);
-  const [loading, setLoding] = useState(false);
+  const [loading, setLoding] = useState(true);
+  const [icons, setIcons] = useState([RiComputerLine, GoLocation]);
 
   //
   useEffect(() => {
@@ -19,6 +23,8 @@ function App() {
       const domain = await getCurrentTab();
       const apiData = await getApiArpeely(domain);
 
+      setLoding(false);
+      // save data for show in state
       setActiveTab({
         ip: apiData.ip,
         location: apiData.location,
@@ -30,7 +36,7 @@ function App() {
     fetchData();
   }, []);
 
-  //
+  // use arpeely api with the domain website
   const getApiArpeely = async (domain) => {
     try {
       const response = await fetch(
@@ -38,7 +44,7 @@ function App() {
         {
           method: "GET",
           headers: {
-            "X-Best-Pokemon": "Bulbasaur",
+            "X-Best-Pokemon": "Pikachu",
           },
         }
       );
@@ -50,20 +56,23 @@ function App() {
     }
   };
 
+  // Similar to window locatin => use the url of current tab
   const getCurrentTab = async () => {
     let queryOptions = { active: true, lastFocusedWindow: true };
     let [tab] = await chrome.tabs.query(queryOptions);
     console.log(tab);
     return tab.url.split("/")[2];
   };
+
+  // Similar to local storage => Save history for the counter
   const saveDomain = (domain) => {
+    // initialState to storage
     let objData = {
       counter: 0,
       domain: [],
     };
 
     chrome.storage.sync.get(["key"], function (result) {
-      console.log("Value currently is ", result.key);
       if (result.key) {
         objData = JSON.parse(result.key);
       }
@@ -94,35 +103,35 @@ function App() {
     });
   };
 
+  // go to arpeely web
   const openTab = () => {
     window.open("https://www.arpeely.com/", "_blank");
   };
 
   return (
     <div className='container'>
+      {loading && <Spinnner />}
+
       <button className='web-btn' onClick={() => openTab()}>
         A
       </button>
-
       <h4 className='show'>Arpeely Chrome Extension</h4>
 
       <div className='content'>
         <div className='column'>
-          <div className='info'>
-            <div className='icons'>
-              <RiComputerLine className='icons' /> {activeTab.ip}
-            </div>
-            <div className='icons'>
-              <GoLocation className='icons' /> {activeTab.location}
-            </div>
-            <div className='icons'>
-              <VscOrganization className='icons' />
-              {activeTab.organization}
-            </div>
-            <div className='icons'>
-              <BsFillFlagFill className='icons' />
-              {activeTab.country_code}
-            </div>
+          <div className='icons'>
+            <RiComputerLine className='icons' /> {activeTab.ip}
+          </div>
+          <div className='icons'>
+            <GoLocation className='icons' /> {activeTab.location}
+          </div>
+          <div className='icons'>
+            <VscOrganization className='icons' />
+            {activeTab.organization}
+          </div>
+          <div className='icons'>
+            <BsFillFlagFill className='icons' />
+            {activeTab.country_code}
           </div>
 
           <div className='count-div'>

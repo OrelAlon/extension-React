@@ -20,10 +20,6 @@ To see changes made in the application, you must run it.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## code
-
-some
-
 ## design
 
 My design was taken from your site and [My Portfolio](https://orel-alon-portfolio.netlify.app/) which happen to be very similar in color

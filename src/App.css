@@ -8,10 +8,8 @@
   background-color: black;
   color: white;
   font-size: 20px;
-  padding: 5px;
+  padding: 3px;
   position: fixed;
-  top: 0;
-  left: 0;
   cursor: pointer;
   z-index: 2;
 }
@@ -20,15 +18,21 @@
   color: black;
   cursor: pointer;
 }
-.reset-btn:hover {
-  color: #fd6262;
-  cursor: pointer;
-}
 
 .reset-btn {
-  background-color: black;
-  color: #889ce7;
+  background-color: #fd6262;
+  border: solid 1px #fd6262;
+  color: #212223;
+  border-radius: 6px;
+  font-weight: bolder;
   padding: 8px 18px;
+  vertical-align: middle;
+}
+.reset-btn:hover {
+  color: white;
+  border: solid 1px white;
+  background-color: black;
+  cursor: pointer;
 }
 
 .btn {
@@ -37,7 +41,6 @@
 .show {
   text-align: center;
   margin: 10px;
-  top: 0;
 }
 .container {
   position: absolute;
@@ -49,14 +52,12 @@
   background-color: #1b1c1e;
   color: #ffffff;
   overflow: hidden;
-  /* box-shadow: 0 0 20px 8px #d0d0d0; */
 }
 
 .content {
   position: absolute;
   top: 50%;
   transform: translatey(-50%);
-  text-align: justify;
   padding: 40px;
   width: 80%;
 }
@@ -96,19 +97,11 @@
 .container:hover .flap::before {
   transform: translatex(-300px);
 }
-h6 {
-  font-weight: bolder;
-}
+
 h4 {
   letter-spacing: 2px;
 }
-p {
-  font-size: 10px;
-}
-.info {
-  display: flex;
-  flex-direction: column;
-}
+
 .icons {
   vertical-align: middle;
   margin-bottom: 5px;
@@ -119,4 +112,9 @@ p {
   position: fixed;
   margin-right: 20px;
   right: 0;
+}
+.spinner {
+  position: absolute;
+  top: 30%;
+  left: 38%;
 }

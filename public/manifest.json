@@ -7,8 +7,8 @@
     "default_title": "Chrome Extension",
     "default_popup": "index.html",
     "default_icon": {
-      "16": "diamond.png",
-      "128": "diamond.png"
+      "16": "arpeely.png",
+      "128": "arpeely.png"
     }
   },
   "permissions": ["activeTab", "tabs", "storage"]
